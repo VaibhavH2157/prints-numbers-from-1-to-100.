@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- login -->
+
+  <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+            <div class="card">
+              <div onclick="handlesubmit()" class="card-header">Login</div>
+              <div class="card-body">
+                <div>
+                  <label for="email" class="form-label">First Email</label>
+                  <input
+                  id="mail"
+                  onkeyup="validate(mail)"
+                    type="text"
+                    class="form-control"
+                    
+                    placeholder="Enter Your Email"
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+                <div class="mt-2">
+                  <label for="password" class="form-label">Password</label>
+                  <input
+                  id="pass"
+                    type="password"
+                    class="form-control"
+                    onkeyup="validate(pass)"
+                    placeholder="Enter Your Password"
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+                <button  onclick=" handlesubmit()" type="button" class="btn btn-primary w-100 mt-3">
+                  Login
+                </button>
+                <p class="text-center mt-3">
+                  Dont Have Account? <a href="#">Create Account</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" ></script>
+
+    <script>
+        const v = document.getElementById("mail")
+        const h = document.getElementById("pass")
+            
+        function handlesubmit(){
+        validate(v)
+        validate(h)
+        
+    }
+    
+    function handleChange(){
+        validate(v)
+        validate(h)
+        }
+
+        function validate(el){
+            if(el.value === ""){
+               el.classList.add("is-invalid") 
+               el.classList.remove("is-valid") 
+            }else{
+                el.classList.remove("is-invalid") 
+                el.classList.add("is-valid") 
+
+            }
+           
+        }
+        
+            
+    </script>
+  </body>
+</html>

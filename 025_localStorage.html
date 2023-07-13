@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addtotal()">click Here</button>
+    <button onclick=" getfromLocal()">get me</button>
+    <button onclick="removeFromLocal()">remove me</button>
+    <script>
+        //local Storage   5mb 
+        //sessionstorsge 5mb/ domain
+        //cookies         4kb/ domain  max 50
+  const arr = ["vaibhav ", "dev" , " anii"]
+        function addtotal(){
+            localStorage.setItem("info",JSON.stringify(arr))
+            
+        }
+        function getfromLocal(){
+            const data = localStorage.getItem("info")
+            console.log(JSON.parse(data))//deserialize
+        }
+
+        function removeFromLocal(){
+localStorage.removeItem("info")
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

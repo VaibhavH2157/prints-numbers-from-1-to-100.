@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="root">HELLO</h1>
+    <input type="text" id="inp">
+    <button onclick="fn()">view</button>
+    <script>
+        function fn(){
+            console.log("hellos");
+            const x = document.querySelector("#root")
+            console.log(x);
+            x.innerHTML = " vaibhav"
+
+            const i = document.querySelector("#inp").value 
+            console.log(i);
+            x.innerHTML = i
+        }
+    </script>
+</body>
+</html>

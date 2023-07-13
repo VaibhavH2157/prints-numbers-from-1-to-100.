@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root"></div>
+    <script>
+        const arr = ["dell","hp","apple","1plus"]
+        const x = document.getElementById("root")
+        // x.innerHTML = arr[0]
+        // x.innerHTML += arr[1]
+        x.innerHTML = `<h1>${arr[0]}</h1>`
+        x.innerHTML += `<h1>${arr[1]}</h1>`
+        for(const item of arr){
+            x.innerHTML += `<h1>${item}</h1>` //we print the whole array using this loop 
+            
+        }
+        
+        console.log(arr.length);
+        //hp
+        //hp
+        //apple
+        
+        // for( let i=0; i<10; i++)
+        // {
+
+        //     console.log(arr[i]);
+        // }
+
+        for(let i=0; i<arr.length; i++)
+        {
+
+            console.log("hello");
+        }
+
+        // for( const x of arr ) //we also write for loop in this way
+        // {
+        //     console.log(x);
+        // }
+    </script>
+</body>
+</html>

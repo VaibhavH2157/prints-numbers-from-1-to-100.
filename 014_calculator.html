@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="output"></h1>
+    <input id="inp1" type="text"><br>
+    <input id="inp2" type="text"><br>
+    <button onclick="calculate('add')" >+</button>
+    <button onclick="calculate('sub')" >-</button>
+    <button onclick="calculate('mul')" >*</button>
+    <button onclick="calculate('div')" >/</button>
+    
+    <script>function calculate(op){
+        const i = +document.querySelector("#inp1").value 
+        const v = +document.querySelector("#inp2").value 
+            // console.log(i+v);
+
+            if(op === "add"){
+
+                document.querySelector("#output").innerHTML = i + v
+            }else if(op === "sub"){
+
+                document.querySelector("#output").innerHTML = i - v
+            }else if(op === "mul"){
+
+                document.querySelector("#output").innerHTML = i * v
+            }else if(op == "div"){
+                document.querySelector("#output").innerHTML = i / v
+            }
+            
+
+            
+        
+    }
+        </script>
+</body>
+</html>

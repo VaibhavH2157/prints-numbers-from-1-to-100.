@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 10 //10
+        let y = x
+        y = 50
+        console.log(x);
+        console.log(y);
+        const arr = [20,30] //address x200
+        const dd = arr //x200
+        dd[0] = "dell"
+        console.log(arr);
+        console.warn(dd);
+
+        const obj = { name: "vaibhav", age: 21 }
+        const test = obj
+        test.name = "hamand"
+
+        console.log(obj);
+        console.warn(test);
+
+        function fn(){
+            console.log("FN Function");
+            return "hi"
+        }
+        const result = fn()
+        const show = fn
+        console.log(show);
+        show()
+        console.log(result);
+
+     </script>
+</body>
+</html>

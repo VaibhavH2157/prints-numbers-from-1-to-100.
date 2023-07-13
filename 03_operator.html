@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arithmatic operator
+
+        console.log(10 + 20);
+        console.log(10 - 4);
+        console.log(10 * 5);
+        console.log(10 / 5); //division
+        console.log(10 % 5); //modulus
+        console.log((10 + 5) * 5);
+        console.log(10 + 5 * 5);
+        console.log(3**3);//power(cube)
+
+        let n1 = 10, n2 = 20
+        console.log(n1 + n2);
+
+        n1++
+        console.log(n1);
+
+        n2--
+        console.log(n2);
+
+        //datatypes
+        //if,if-else(condition)
+        //function,array,objects
+
+        // comaprison operator
+        /*< > == ===*/
+
+        console.log(10 < 20); // 10less than 50 = true
+        console.log(10 > 20);// 10 grater than 50 = false
+
+        console.log(10 == 20); // 10 eqal to 20 = false
+        console.log(10 == "10");//true
+        console.log(10 === "10");// false
+
+        //logical
+        //and &&
+        //or  ||
+        //not  !
+    console.clear();
+    console.log(10 < 20 && 10 > 5);
+/*
+ AND (&&)
+     true && true = true
+     false && true = false
+     true && false = false
+     false && false = false
+*/
+console.log(10 > 200 && 10 < 5);
+/*
+OR (||)
+
+true || true = true
+false || true = true
+     true || false = true
+     false || false = false
+     */
+    
+//SHORT CIRCUIT
+10 < 5 && console.log("HELLO");
+
+//not operator
+
+console.log(10 != 10 || 10 != 20);
+// 10  == 10  true  false
+// 10 == 20   false  true
+
+console.clear();
+console.log(10 !== "10");
+// 10 === "10" false  true
+
+console.log(10 <= 20);// less than or equal to 
+// 10 < 20 true
+// 10 == 20 false
+console.log(10 >= 10);// grater than or equal to 
+// 10 < 10 false
+// 10 == 10 true
+
+// assignment operator
+let x = 50;
+ y = x + 50;
+ x = x + 50;
+  //short hand operator
+x += 50
+  console.log(x);
+
+  //-------ternary 
+  let result = 10 > 5 ? "hello" : "byee"
+  console.log(result);
+
+  let ans = 10 < 5
+  ? 20 / 2 == 0
+  : 10 !== 20
+  console.log(ans);
+
+
+</script>
+</body>
+</html>

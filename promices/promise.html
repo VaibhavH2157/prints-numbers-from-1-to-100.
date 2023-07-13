@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const v = new Promise(function(resolve,reject){ 
+            // resolve("ok")  //success
+            reject("not ok")  //success
+        })
+
+        //1 ........then catch
+        //2.........async await
+
+        v 
+        
+            .then(handleSuccess)
+        
+           
+           .catch(handleFail)
+
+           function handleSuccess(result){
+            console.log(result);
+           }
+           function handleFail(err){
+            console.error(err);
+           }
+
+           //async await
+
+           async function handleResponse(){
+               
+               try {
+                   const data =  await v
+                   console.log("from async await" +data);
+                   
+                } catch (error) {
+                       
+                    console.log("from async await" + error);
+            }
+           }
+           handleResponse()
+    </script>
+</body>
+</html>

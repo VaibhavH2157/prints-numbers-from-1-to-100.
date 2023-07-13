@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        body{
+            background-color: darkslategray;
+        }
+    </style>
+</head>
+<body>
+  <center><h1 style="color: aliceblue;">Pocket Money Manager</h1></center>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                <strong>Income</strong>
+                <strong class="text-success" id="totalIncome">0</strong>
+              </div>
+              <div class="card-body">
+                <input value="salary" type="text" class="form-control" placeholder="Enter from" id="IncomeFrom">
+                <br>
+                <input  value="25000" type="number" class="form-control" placeholder="Enter Amount" id="IncomeAmount">
+                <br>
+                <button type="button" class="btn btn-outline-primary w-100"  onclick="addIncome()">Add Income</button>
+              </div>
+              
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                
+                <strong>Expense</strong>
+                <strong class="text-danger" id="totalExpense">0</strong>
+              </div>
+              <div class="card-body"> 
+                <input value="petrol" type="text" id="ExpenseTo" class="form-control" placeholder="Enter from">
+                <br>
+                <input value="500" type="number" id="ExpenseAmount" class="form-control" placeholder="Enter Expense">
+                <br>
+                <button type="button" class="btn btn-outline-danger w-100" onclick="addExpense()">Add Expense</button>
+            </div>
+              
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                <strong>Statements</strong>
+                <strong >Balance : <span id="Balance">0</span> </strong>
+              </div>
+              <div class="card-body" id="statement"> 
+              
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
+
+
+    <script>
+        const account = []
+    
+        const v = document.getElementById("IncomeFrom")
+        const i = document.getElementById("IncomeAmount")
+
+
+        const l = document.getElementById("ExpenseTo")
+        const m = document.getElementById("ExpenseAmount")
+
+        function addIncome(){
+
+           
+           //console.log(v);
+            //console.log(i);
+
+            account.unshift({
+                from : IncomeFrom.value,
+                amount: +IncomeAmount.value,
+                type : "credit"
+            })
+                
+            
+           
+           v. value = ""
+           i. value = ""
+           display()
+
+        }
+
+        function addExpense(){
+                      //console.log(v);
+            //console.log(i);
+         account.unshift({
+            from: ExpenseTo.value,
+            amount: +ExpenseAmount.value,
+            type : "debit"
+         })
+             display()
+            
+             l. value = ""
+             m. value = ""
+
+            }
+           
+        
+
+        function display(){
+          let totalCredit = 0
+          let totalDebit = 0
+          let totalBalance =0
+
+          const totalIncome = document.getElementById("totalIncome")
+          const totalExpense = document.getElementById("totalExpense")
+          const balance = document.getElementById("Balance")
+          const statement = document.getElementById("statement")
+           let str = ""
+          for (const item of account) {
+            if(item.type === "credit"){
+
+              totalCredit += item.amount
+              str += ` 
+                   <div class="alert alert-success d-flex justify-content-between">
+                     <p>${item.from}</p>
+                     <strong>${item.amount}</strong>
+              </div>  `
+            }
+            if (item.type === "debit"){
+              totalDebit += item.amount
+              str += `
+
+                    <div class="alert alert-danger d-flex justify-content-between">
+                    <p>${item.from}</p>
+                    <strong>${item.amount}</strong>
+                    
+                  </div>`
+            }
+          }
+
+            statement.innerHTML = str
+            totalIncome.innerHTML = totalCredit + "/-"
+            totalExpense.innerHTML = totalDebit + "/-"
+            balance.innerHTML = totalCredit - totalDebit
+        }
+    </script>
+</body>
+
+</html>
